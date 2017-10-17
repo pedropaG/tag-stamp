@@ -1,0 +1,53 @@
+es:
+  update: Actualizar
+  import: Importar
+  preview: Previsualizar
+  upload_or_download_file: Fichero de pedidos
+  upload_or_download_file_message: Puedes subir una hoja de cálculo con los pedidos de etsy.
+  select_files: Sube un CSV
+  imported_successfully: Fichero importado correctamente
+  save: Guardar
+  pendings: Sin imprimir
+  all: Todos
+  activerecord:
+    models:
+      user: 
+        one: Usuario
+        other: Usuarios
+      order: 
+        one: Pedido
+        other: Pedidos
+    attributes:
+      user:
+        name: Nombre
+        full_name: Nombre completo
+        password: Contraseña
+        rows: Filas
+        columns: Columnas
+      order:
+        number: Número de pedido
+        name: Nombre
+        full_name: Nombre completo
+        street: Calle
+        street2: "Calle 2"
+        city: Ciudad
+        country: País
+        zip_code: Código Postal
+        address: Dirección
+        printed: Impreso
+        printed_at: Fecha de impresión
+        created_at: Fecha de creación
+  csv_columns:
+    order_number: 'Núm. de pedido'
+    full_name: 'Nombre completo'
+    street: 'Calle'
+    street2: 'Calle 2'
+    city: 'Ciudad'
+    country: 'País'
+    zip_number: 'Código postal'
+    state: 'Estado'
+  devise:
+    log_in: Entrar
+    sign_up: Registrarse
+    forgot_your_password: Olvidé mi contraseña 
+    remember_me: Recuerdame

@@ -1,0 +1,55 @@
+<tr>
+	<%= form_tag edit_order_path(record), class: "form-inline" do %>
+		<td class="print_selector">
+			<div class="checkbox">
+				<%= check_box_tag 'orders[]', record.id %>
+			</div>
+		</td>
+		<td class="number">
+			<div class="form-group">
+				<%= text_field_tag "record[number]", record.number %>
+			</div>
+		</td>
+		<td class="full_name">
+			<div class="form-group">
+				<%= text_field_tag "record[full_name]", record.full_name %>
+			</div>
+		</td>
+		<td class="street">
+                        <div class="form-group">
+                                <%= text_field_tag "record[street]", record.street %>
+                        </div>
+                </td>
+		<td class="street2">
+                        <div class="form-group">
+                                <%= text_field_tag "record[street2]", record.street2 %>
+                        </div>
+                </td>
+		<td class="city">
+                        <div class="form-group">
+                                <%= text_field_tag "record[city]", record.city %>
+                        </div>
+                </td>
+		<td class="state">
+                        <div class="form-group">
+                                <%= text_field_tag "record[state]", record.state %>
+                        </div>
+                </td>
+		<td class="zip_number">
+                        <div class="form-group">
+                                <%= text_field_tag "record[zip_number]", record.zip_number %>
+                        </div>
+                </td>
+		<td class="country">
+                        <div class="form-group">
+                                <%= text_field_tag "record[country]", record.country %>
+                        </div>
+                </td>
+		
+		<td class="actions">
+			<div class="form-group">
+				<%= submit_tag t(:save), class: "btn btn-success" %>
+			</div>
+		</td>
+	<% end %>
+</tr>

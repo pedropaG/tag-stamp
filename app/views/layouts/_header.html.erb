@@ -1,0 +1,16 @@
+<div class="header_box">
+	<div class="import_header_box">
+	        <%= form_tag upload_file_tags_path, multipart: true do %>
+        	        <%= file_field_tag 'file', title: t(:upload_or_download_file_message), class: "file", "data-allowed-file-extensions": '["csv","xls","xlsx"]', "data-msg-placeholder": "#{t(:select_files)}", "data-show-preview": "false" %>
+	                <%= hidden_field_tag 'file_url', "https://www.etsy.com/es/your/orders/sold.csv?csv-type=order-level&month=#{month}&year=#{year}" %>
+                	<%= submit_tag t(:import), class: "btn btn-success" %>
+        	<% end %>
+	</div>
+
+        <div class="user_header_box">
+                <%= link_to t(:edit_user), edit_user_path(current_user), class: "btn btn-primary" %>
+                <%= link_to t(:logout), destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+        </div>
+
+</div>
+

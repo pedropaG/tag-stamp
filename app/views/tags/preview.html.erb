@@ -1,0 +1,18 @@
+<div class="tags_list container">
+	<% @records.each_with_index do |record, index| %>
+		<% if real_column(index) == 1 %>
+			<div class="row">
+		<% end %>
+			<div class="col tag_box <%= real_column(index) %>">
+				<%= render "tag_box", record: record %>
+			</div>	
+		<% if real_column(index) == current_user.columns || index == (@records.size - 1) %>
+			</div>
+		<% end %>
+	<% end %>
+	<hr>
+	<div class="row">
+		<%= link_to t(:print), root_path, class: "btn btn-success" %>
+		<%= link_to t(:return), root_path, class: "btn btn-danger" %>
+	</div>
+</div>

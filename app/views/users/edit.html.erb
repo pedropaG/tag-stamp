@@ -1,0 +1,39 @@
+<div class="container">
+<%= form_tag edit_user_path(current_user) do %>
+	<div class="row">
+        	<div class="field_box column"><%= label_tag 'user[email]', User.human_attribute_name(:email) %><%= email_field_tag 'user[email]', current_user.email %></div>
+	        <div class="fiel_box column"><%= label_tag 'user[logo]', User.human_attribute_name(:logo) %><%= file_field_tag 'user[logo]' %></div>
+        </div>
+	<div class="row">
+		<div class="field_box column"><%= label_tag 'user[password]', User.human_attribute_name(:password) %><%= password_field_tag 'user[password]', nil %></div>
+        	<div class="field_box column"><%= label_tag 'user[password_confirmation]', User.human_attribute_name(:password_confirmation) %><%= password_field_tag 'user[password_confirmation]', nil %></div>
+	</div>
+	<hr>
+	<div class="row">
+        	<div class="field_box column"><%= label_tag 'user[rows]', User.human_attribute_name(:rows) %><%= number_field_tag 'user[rows]', current_user.rows %></div>
+	        <div class="field_box column"><%= label_tag 'user[columns]', User.human_attribute_name(:columns) %><%= number_field_tag 'user[columns]', current_user.columns %></div>
+	</div>
+	<hr>
+	<div class="row">
+	        <div class="field_box column"><%= label_tag 'user[order_number]', User.human_attribute_name(:order_number) %><%= text_field_tag 'user[order_number]', current_user.order_number %></div>
+	        <div class="field_box column"><%= label_tag 'user[full_name]', User.human_attribute_name(:full_name) %><%= text_field_tag 'user[full_name]', current_user.full_name %></div>
+	</div>
+	<div class="row">
+	        <div class="field_box column"><%= label_tag 'user[street]', User.human_attribute_name(:street) %><%= text_field_tag 'user[street]', current_user.street %></div>
+        	<div class="field_box column"><%= label_tag 'user[street2]', User.human_attribute_name(:street2) %><%= text_field_tag 'user[street2]', current_user.street2 %></div>
+	</div>
+	<div class="row">
+		<div class="field_box column"><%= label_tag 'user[zip_number]', User.human_attribute_name(:zip_number) %><%= text_field_tag 'user[zip_number]', current_user.zip_number %></div>
+		<div class="field_box column"><%= label_tag 'user[city]', User.human_attribute_name(:city) %><%= text_field_tag 'user[city]', current_user.city %></div>
+	        <div class="field_box column"><%= label_tag 'user[state]', User.human_attribute_name(:state) %><%= text_field_tag 'user[state]', current_user.state %></div>
+	</div>
+	<div class="row">
+	        <div class="field_box column"><%= label_tag 'user[country]', User.human_attribute_name(:country) %><%= text_field_tag 'user[country]', current_user.country %></div>
+	</div>
+	<hr>
+	<div class="row">
+	        <%= submit_tag t(:update), class: "btn btn-success" %>
+		<%= link_to t(:return), root_path, class: "btn btn-danger" %>
+	</div>
+<% end %>
+</div>

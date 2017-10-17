@@ -1,0 +1,15 @@
+
+ <% if flash[:now]%>
+	<%= content_tag :div, class: "alert alert-success alert-dimissable" do %>
+		<%= link_to "X", "#", class: "close", "data-dimiss": "alert", "aria-label": "close" %>
+		<%= flash[:now] %>
+	<% end %>
+<% end %>
+<% if flash[:error] %>
+	<%= content_tag :div, class: "alert alert-danger alert-dimissable" do%>
+		<%= link_to "X", "#", class: "close", "data-dimiss": "alert", "aria-label": "close" %>
+		<%= flash[:error] %>
+	<% end %>
+<% end %>
+
+

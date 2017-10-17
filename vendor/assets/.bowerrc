@@ -1,0 +1,6 @@
+{
+  "ignoredDependencies": [
+    "jquery"
+  ],
+  "directory": "bower_components"
+}

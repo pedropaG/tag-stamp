@@ -1,0 +1,47 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require bootstrap-fileinput/css/fileinput.min
+ *= require_self
+ */
+
+.link.active{ color: black;}
+
+.tag_box{
+	box-sizing: border-box;
+	border: 1px solid lightgray;
+	padding: 5px;
+}
+
+.tag_box_line{
+	clear: both;
+	display: block;
+}
+
+.import_header_box{
+	display: inline-block;
+}
+
+.user_header_box{
+	display: inline-block;
+	float: right;
+}
+
+.order_table{
+	margin: 20px 10px;
+}
+
+.header_box{
+    border-bottom: 2px solid #d0c900;
+    background: #edf100;
+}
