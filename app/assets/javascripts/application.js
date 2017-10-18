@@ -25,3 +25,20 @@
 			$(checkboxes).removeAttr('checked');
 		}
 	});
+
+	$(document).on("change, keyup", ".order_table input[type='text']", function(e){
+		var code= e.keyCode || e.which;
+		if (code != '9'){
+			$(this).closest("form").addClass("changed");
+		}
+	});
+
+	$(document).on("change", ".order_table .print_selector .checkbox input", function(e){
+		var checked = $(this).is(":checked");
+		var id = $(this).val();
+		if (checked){
+			$(".preview_form #order_" + id ).attr("checked", true);
+		 }else{
+			$(".preview_form #order_" + id).removeAttr("checked");
+		}
+	});

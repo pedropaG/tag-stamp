@@ -17,6 +17,8 @@
 
 .link.active{ color: black;}
 
+.hidden{ display: none; }
+
 .tag_box{
 	box-sizing: border-box;
 	border: 1px solid lightgray;
@@ -45,3 +47,26 @@
     border-bottom: 2px solid #d0c900;
     background: #edf100;
 }
+
+.order_table .form-group input[type=text]{
+	font-size: 12px;
+	border: 1px solid transparent;
+	outline: none;
+}
+
+.order_table .form-group input[type=text]:focus{
+	border: 1px solid #cacaca;
+}
+.order_table .changed .form-group input[type=text]{ 
+	border: 1px solid #cacaca;
+	border-left-color: transparent;
+}
+.order_table .changed .form-group:first-child input[input=text]{ border-left-color: #cacaca;}
+
+.order_table .actions{	display: none;}
+.order_table .actions input{
+	font-size: 14px;
+	padding: 2px 8px;
+}
+.order_table .changed .actions{ display: block;}
+

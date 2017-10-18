@@ -4,26 +4,30 @@
 </div>
 <div class="content_box">	
 	<% if @records.any? %>
-		<%= form_tag preview_tags_path do %>	
-			<table class="order_table">
-				<thead>	<tr>
-					<td class="checkbox_all mark_all"><%= check_box_tag t(:mark_all) %></td>
-					<td><%= Order.human_attribute_name(:number) %></td>
-					<td><%= Order.human_attribute_name(:full_name) %></td>
-					<td><%= Order.human_attribute_name(:street) %></td>
-					<td><%= Order.human_attribute_name(:street2) %></td>
-					<td><%= Order.human_attribute_name(:city) %></td>
-					<td><%= Order.human_attribute_name(:state) %></td>
-					<td><%= Order.human_attribute_name(:zip_number) %></td>
-					<td><%= Order.human_attribute_name(:country) %></td>
-					<td> </td>
-				</tr></thead>
-				<% @records.each do |record| %>
-					<%= render 'record_list', record: record %>
-				<% end %>
+		<div class="order_table">
+			<div class="orders_header">
+				<span class="checkbox_all mark_all"><%= check_box_tag t(:mark_all) %></span>
+				<span><%= Order.human_attribute_name(:number) %></span>
+				<span><%= Order.human_attribute_name(:full_name) %></span>
+				<span><%= Order.human_attribute_name(:street) %></span>
+				<span><%= Order.human_attribute_name(:street2) %></span>
+				<span><%= Order.human_attribute_name(:city) %></span>
+				<span><%= Order.human_attribute_name(:state) %></span>
+				<span><%= Order.human_attribute_name(:zip_number) %></span>
+				<span><%= Order.human_attribute_name(:country) %></span>
+			</div>
+			<% @records.each do |record| %>
+				<%= render 'record_list', record: record %>
+			<% end %>
 			</table>
-			<%= submit_tag t(:preview), class: "btn btn-success" %>
-		<% end %>
+			<%= form_tag preview_tags_path, class: "preview_form" do %>	
+				<% @records.each do |record| %>
+					<%= content_tag :div, check_box_tag("order[#{record.id}]"), class: "checkbox hidden" %>
+				<% end %>
+				
+				<%= submit_tag t(:preview), class: "btn btn-success" %>
+			<% end %>
+		</table>
 	<% end %>
 </div>
 
