@@ -18,4 +18,12 @@ class Order < ApplicationRecord
 		[state, country].compact.join(", ")
 	end
 
+	def toggle_printed
+		printed = !printed
+	end
+
+	def toggle_printed
+		toggle_printed
+		self.save
+	end
 end

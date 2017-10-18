@@ -1,10 +1,12 @@
 require 'open-uri'
 class TagsController < ApplicationController
 
+	before_action :store_filter
+
 	def index
 		@user = current_user
 		@records = Order.from_user(@user)
-		@records = @records.unprinted unless params[:all]
+		@records = @records.unprinted unless session[:all]
 	end
 
 	def upload_file
@@ -88,6 +90,11 @@ class TagsController < ApplicationController
 
 	def is_number?(value)
 		true if Float(value) rescue false
+	end
+
+	def store_filter
+		session[:all] = false if params[:not_all]
+		session[:all] = true if params[:all]
 	end
 
 end

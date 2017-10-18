@@ -1,6 +1,6 @@
 <div class="container header_order_table">
-	<%= link_to t(:pendings), root_path, class: "link #{'active' if !params[:all]}" %>
-	<%= link_to t(:all), root_path(all: true), class: "link #{'active' if params[:all]}" %>
+	<%= link_to t(:pendings), root_path(not_all: false), class: "link #{'active' if !session[:all]}" %>
+	<%= link_to t(:all), root_path(all: true), class: "link #{'active' if session[:all]}" %>
 </div>
 <div class="content_box">	
 	<% if @records.any? %>
