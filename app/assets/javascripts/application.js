@@ -19,11 +19,7 @@
 	$(document).on("change", ".checkbox_all input[type='checkbox']", function(e){
 		var checked = $(this).is(":checked");
 		var checkboxes = $(this).closest(".order_table").find(".print_selector input[type='checkbox']");
-		if (checked){
-			$(checkboxes).attr('checked', true);
-		}else{
-			$(checkboxes).removeAttr('checked');
-		}
+		$(checkboxes).prop('checked', checked);
 	});
 
 	$(document).on("change, keyup", ".order_table input[type='text']", function(e){
@@ -36,9 +32,5 @@
 	$(document).on("change", ".order_table .print_selector .checkbox input", function(e){
 		var checked = $(this).is(":checked");
 		var id = $(this).val();
-		if (checked){
-			$(".preview_form #order_" + id ).attr("checked", true);
-		 }else{
-			$(".preview_form #order_" + id).removeAttr("checked");
-		}
+		$(".preview_form #order_" + id ).prop("checked", checked);
 	});

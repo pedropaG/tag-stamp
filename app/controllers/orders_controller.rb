@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
 
 	def update
 		@record = Order.find params[:id]
+                @record = set_order_attributes(@record, params[:order])
+                @record.save
 		respond_to do |format|
 			format.js
 			format.html{ redirect_to root_path }
@@ -17,4 +19,13 @@ class OrdersController < ApplicationController
 		end
 	end
 
+
+        protected
+
+        def set_order_attributes(record, new_attributes)
+          new_attributes.each do |name, value|
+            record.send("#{name})=", value) 
+          end
+          record
+        end
 end

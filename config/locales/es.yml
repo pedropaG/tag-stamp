@@ -9,6 +9,8 @@ es:
   save: Guardar
   pendings: Sin imprimir
   all: Todos
+  mark_as_printed: Ya está impreso
+  mark_as_unprinted: No está impreso
   activerecord:
     models:
       user: 

@@ -48,7 +48,8 @@
 		
 		<div class="actions">
 			<div class="form-group">
-				<%= submit_tag t(:save), class: "btn btn-success" %>
+                                <%= link_to t(:"mark_as_#{record.printed ? "unprinted" : "printed"), toggle_printed_order(record), class: "btn btn-#{record.printed ? "primary" : "warning"}" %>
+				<%= submit_tag t(:save), class: "btn btn-success save_button" %>                                
 			</div>
 		</div>
 	<% end %>

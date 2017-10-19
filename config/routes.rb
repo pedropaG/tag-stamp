@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     post 'upload_file', on: :collection
   end
   resources :users, except: [:index, :show, :create]
-  resources :orders, only: [:edit, :update]
+  resources :orders, only: [:edit, :update] do
+    get 'toggle_printed', on: :member
+  end
   
   root 'tags#index'
 end

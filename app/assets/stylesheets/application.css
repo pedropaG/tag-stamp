@@ -63,10 +63,10 @@
 }
 .order_table .changed .form-group:first-child input[input=text]{ border-left-color: #cacaca;}
 
-.order_table .actions{	display: none;}
+.order_table .actions .save_button{	display: none;}
 .order_table .actions input{
 	font-size: 14px;
 	padding: 2px 8px;
 }
-.order_table .changed .actions{ display: block;}
+.order_table .changed .actions .save_button{ display: inline-block;}
 
