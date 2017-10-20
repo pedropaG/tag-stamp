@@ -47,11 +47,14 @@
     border-bottom: 2px solid #d0c900;
     background: #edf100;
 }
-
+.edition_mode .order_table .form-inline > div{
+	width: 10%;
+}
 .order_table .form-group input[type=text]{
 	font-size: 12px;
 	border: 1px solid transparent;
 	outline: none;
+	overflow: hidden;
 }
 
 .order_table .form-group input[type=text]:focus{
@@ -70,3 +73,10 @@
 }
 .order_table .changed .actions .save_button{ display: inline-block;}
 
+.order_table .just_edition_mode{ display: none !important;}
+.edition_mode .order_table .just_edition_mode{ display: inline-block !important;}
+
+.list_mode .order_table .form-group input[type=text]{
+	cursor: default;
+	pointer-events: none;
+}

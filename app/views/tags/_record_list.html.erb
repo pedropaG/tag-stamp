@@ -15,32 +15,32 @@
 				<%= text_field_tag "record[full_name]", record.full_name %>
 			</div>
 		</div>
-		<div class="street">
+		<div class="street just_edition_mode">
                         <div class="form-group">
                                 <%= text_field_tag "record[street]", record.street %>
                         </div>
                 </div>
-		<div class="street2">
+		<div class="street2 just_edition_mode">
                         <div class="form-group">
                                 <%= text_field_tag "record[street2]", record.street2 %>
                         </div>
                 </div>
-		<div class="city">
+		<div class="city just_edition_mode">
                         <div class="form-group">
                                 <%= text_field_tag "record[city]", record.city %>
                         </div>
                 </div>
-		<div class="state">
+		<div class="state just_edition_mode">
                         <div class="form-group">
                                 <%= text_field_tag "record[state]", record.state %>
                         </div>
                 </div>
-		<div class="zip_number">
+		<div class="zip_number just_edition_mode">
                         <div class="form-group">
                                 <%= text_field_tag "record[zip_number]", record.zip_number %>
                         </div>
                 </div>
-		<div class="country">
+		<div class="country just_edition_mode">
                         <div class="form-group">
                                 <%= text_field_tag "record[country]", record.country %>
                         </div>
@@ -48,7 +48,7 @@
 		
 		<div class="actions">
 			<div class="form-group">
-                                <%= link_to t(:"mark_as_#{record.printed ? "unprinted" : "printed"), toggle_printed_order(record), class: "btn btn-#{record.printed ? "primary" : "warning"}" %>
+                                <%= link_to t(:"mark_as_#{record.printed ? 'unprinted' : 'printed'}"), toggle_printed_order_path(record), class: "btn btn-#{record.printed ? "primary" : "warning"}" %>
 				<%= submit_tag t(:save), class: "btn btn-success save_button" %>                                
 			</div>
 		</div>

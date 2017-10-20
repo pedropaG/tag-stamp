@@ -1,20 +1,32 @@
 <div class="container header_order_table">
-	<%= link_to t(:pendings), root_path(not_all: false), class: "link #{'active' if !session[:all]}" %>
-	<%= link_to t(:all), root_path(all: true), class: "link #{'active' if session[:all]}" %>
+	<div class="row">
+		<% new_params = !params[:edition] ? {edition: true} : {} %>
+		<% new_params.merge!({not_all: true}) if !session[:all] %>
+		<% new_params.merge!({all: true}) if session[:all] %>
+		<div class="col-lg-10">
+			<%= link_to t(:"#{params[:edition] ? "list" : "edition"}_mode"), root_path(new_params), class: "link" %>
+		</div>
+		<div class="col-lg-2">
+			<div class="content  pull-right">
+				<%= link_to t(:pendings), root_path(not_all: false), class: "link #{'active' if !session[:all]}" %>
+				<%= link_to t(:all), root_path(all: true), class: "link #{'active' if session[:all]}" %>
+			</div>
+		</div>
+	</div>
 </div>
-<div class="content_box">	
+<div class="content_box container <%= params[:edition] ? "edition" : "list" %>_mode">	
 	<% if @records.any? %>
 		<div class="order_table">
 			<div class="orders_header">
 				<span class="checkbox_all mark_all"><%= check_box_tag t(:mark_all) %></span>
 				<span><%= Order.human_attribute_name(:number) %></span>
 				<span><%= Order.human_attribute_name(:full_name) %></span>
-				<span><%= Order.human_attribute_name(:street) %></span>
-				<span><%= Order.human_attribute_name(:street2) %></span>
-				<span><%= Order.human_attribute_name(:city) %></span>
-				<span><%= Order.human_attribute_name(:state) %></span>
-				<span><%= Order.human_attribute_name(:zip_number) %></span>
-				<span><%= Order.human_attribute_name(:country) %></span>
+				<span class="just_edition_mode"><%= Order.human_attribute_name(:street) %></span>
+				<span class="just_edition_mode"><%= Order.human_attribute_name(:street2) %></span>
+				<span class="just_edition_mode"><%= Order.human_attribute_name(:city) %></span>
+				<span class="just_edition_mode"><%= Order.human_attribute_name(:state) %></span>
+				<span class="just_edition_mode"><%= Order.human_attribute_name(:zip_number) %></span>
+				<span class="just_edition_mode"><%= Order.human_attribute_name(:country) %></span>
 			</div>
 			<% @records.each do |record| %>
 				<%= render 'record_list', record: record %>

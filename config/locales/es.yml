@@ -11,6 +11,9 @@ es:
   all: Todos
   mark_as_printed: Ya está impreso
   mark_as_unprinted: No está impreso
+  list_mode: Modo listado
+  edition_mode: Modo edición
+  edit_user: Editar usuario
   activerecord:
     models:
       user: 

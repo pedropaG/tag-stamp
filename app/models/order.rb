@@ -19,10 +19,10 @@ class Order < ApplicationRecord
 	end
 
 	def toggle_printed
-		printed = !printed
+		self.printed = !self.printed
 	end
 
-	def toggle_printed
+	def toggle_printed!
 		toggle_printed
 		self.save
 	end
