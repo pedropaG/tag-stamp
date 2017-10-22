@@ -1,14 +1,20 @@
 <div class="tags_list container">
-	<% @records.each_with_index do |record, index| %>
-		<% if real_column(index) == 1 %>
-			<div class="row">
-		<% end %>
-			<div class="col tag_box <%= real_column(index) %>">
-				<%= render "tag_box", record: record %>
-			</div>	
-		<% if real_column(index) == current_user.columns || index == (@records.size - 1) %>
-			</div>
-		<% end %>
+	<% record_number = 0 %>
+	<% cell = 0 %>
+	<% (0..total_pages(@records)).each do |page| %>
+		<div class="page_box">
+			<% (0..current_user.rows).each do |row| %>
+				<div class="row_box">
+					<% (0..current_user.columns).each do |columns| %>
+						<% cell += 1 %>
+						<% record = order_by_cell(cell, page, record_number, @records) %>
+						<% record_number +=1 if record %>
+						<%= render "tag_box", record: record %>
+					<% end %>
+				</div>
+			<% end %>
+			<footer></footer>
+		</div>
 	<% end %>
 	<hr>
 	<div class="row">

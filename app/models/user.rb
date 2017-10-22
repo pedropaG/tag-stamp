@@ -12,4 +12,20 @@ class User < ApplicationRecord
 	[:email, :password, :password_confirmation, :rows, :columns, :order_name, :street, :street2, :zip_number, :state, :country, :logo_uid, :logo_name]
   end
 
+  def last_cell_printed
+	self[:last_cell_printed] || 0
+  end
+
+  def cells_per_page
+	rows * columns
+  end
+
+  def cell_height
+	page_height / rows
+  end
+
+  def cell_width
+	page_width / columns
+  end
+
 end

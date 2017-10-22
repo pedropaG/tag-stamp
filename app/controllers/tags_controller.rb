@@ -52,7 +52,9 @@ class TagsController < ApplicationController
 	end
 
 	def preview
-		@records = params[:orders].map {|id| Order.find(id) }
+		logger.debug params[:orders]
+		orders_ids = params[:orders] - ["0"]
+		@records = orders_ids.map {|id| Order.find(id) }
 		
 	end
 

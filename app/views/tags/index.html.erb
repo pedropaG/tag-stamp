@@ -34,7 +34,7 @@
 			</table>
 			<%= form_tag preview_tags_path, class: "preview_form" do %>	
 				<% @records.each do |record| %>
-					<%= content_tag :div, check_box_tag("order[#{record.id}]"), class: "checkbox hidden" %>
+					<%= content_tag :div, check_box_tag("orders[]", record.id), class: "checkbox hidden" %>
 				<% end %>
 				
 				<%= submit_tag t(:preview), class: "btn btn-success" %>

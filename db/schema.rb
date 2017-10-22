@@ -58,16 +58,16 @@ ActiveRecord::Schema.define(version: 20171022200021) do
     t.string   "state"
     t.string   "country"
     t.integer  "last_cell_printed"
-    t.integer  "page_margin_left",       default: 0
-    t.integer  "page_margin_right",      default: 0
-    t.integer  "page_margin_top",        default: 0
-    t.integer  "page_margin_bottom",     default: 0
-    t.integer  "tag_margin_left",        default: 0
-    t.integer  "tag_margin_right",       default: 0
-    t.integer  "tag_margin_top",         default: 0
-    t.integer  "tag_margin_bottom",      default: 0
-    t.integer  "page_width",             default: 210
-    t.integer  "page_height",            default: 297
+    t.integer  "page_margin_left",       default: 0,   null: false
+    t.integer  "page_margin_right",      default: 0,   null: false
+    t.integer  "page_margin_top",        default: 0,   null: false
+    t.integer  "page_margin_bottom",     default: 0,   null: false
+    t.integer  "tag_margin_left",        default: 0,   null: false
+    t.integer  "tag_margin_right",       default: 0,   null: false
+    t.integer  "tag_margin_top",         default: 0,   null: false
+    t.integer  "tag_margin_bottom",      default: 0,   null: false
+    t.integer  "page_width",             default: 210, null: false
+    t.integer  "page_height",            default: 297, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

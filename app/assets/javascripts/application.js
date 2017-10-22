@@ -29,8 +29,8 @@
 		}
 	});
 
-	$(document).on("change", ".order_table .print_selector .checkbox input", function(e){
+	$(document).on("change", ".order_table .print_selector .checkbox input[type='checkbox']", function(e){
 		var checked = $(this).is(":checked");
 		var id = $(this).val();
-		$(".preview_form #order_" + id ).prop("checked", checked);
+		$(".preview_form #orders_" + id ).prop("checked", checked);
 	});
