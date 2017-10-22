@@ -27,8 +27,27 @@ es:
         name: Nombre
         full_name: Nombre completo
         password: Contraseña
+        password_confirmation: Confirmación de contraseña
         rows: Filas
         columns: Columnas
+        order_number: Nº de pedido
+        full_name: Nombre completo
+        street: Calle
+        street2: Calle 2
+        city: Ciudad
+        country: País
+        state: Estado
+        zip_number: Código postal
+        page_width: Ancho de página
+        page_height: Alto de página
+        page_margin_left: Margen de página izquierdo
+        page_margin_right: Margen de página derecho
+        page_margin_top: Margen de página superior
+        page_margin_bottom: Margen de página inferior
+        tag_margin_left: Margen de etiquetas izquierdo
+        tag_margin_right: Margen de etiquetas derecho
+        tag_margin_top: Margen de etiquetas superior
+        tag_margin_bottom: Margen de etiquetas inferior
       order:
         number: Número de pedido
         name: Nombre
@@ -38,6 +57,7 @@ es:
         city: Ciudad
         country: País
         zip_code: Código Postal
+        state: Estado
         address: Dirección
         printed: Impreso
         printed_at: Fecha de impresión
@@ -51,6 +71,10 @@ es:
     country: 'País'
     zip_number: 'Código postal'
     state: 'Estado'
+  configuration:
+    user_group: Configuración de usuario
+    page_group: Configuración de impresión
+    address_group: Configuración de importación
   devise:
     log_in: Entrar
     sign_up: Registrarse

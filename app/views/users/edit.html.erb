@@ -1,34 +1,53 @@
 <div class="container">
 <%= form_tag edit_user_path(current_user) do %>
-	<div class="row">
-        	<div class="field_box column"><%= label_tag 'user[email]', User.human_attribute_name(:email) %><%= email_field_tag 'user[email]', current_user.email %></div>
-	        <div class="fiel_box column"><%= label_tag 'user[logo]', User.human_attribute_name(:logo) %><%= file_field_tag 'user[logo]' %></div>
-        </div>
-	<div class="row">
-		<div class="field_box column"><%= label_tag 'user[password]', User.human_attribute_name(:password) %><%= password_field_tag 'user[password]', nil %></div>
-        	<div class="field_box column"><%= label_tag 'user[password_confirmation]', User.human_attribute_name(:password_confirmation) %><%= password_field_tag 'user[password_confirmation]', nil %></div>
+	<div>
+		<%= content_tag :h2, t(:user_group, scope: :configuration) %>
+		<div class="row">
+        		<div class="field_box col-sm-6"><%= label_tag 'user[email]', User.human_attribute_name(:email) %><%= email_field_tag 'user[email]', current_user.email %></div>
+	        	<div class="fiel_box col-sm-6"><%= label_tag 'user[logo]', User.human_attribute_name(:logo) %><%= file_field_tag 'user[logo]' %></div>
+	        </div>
+		<div class="row">
+			<div class="field_box col-sm-6"><%= label_tag 'user[password]', User.human_attribute_name(:password) %><%= password_field_tag 'user[password]', nil %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[password_confirmation]', User.human_attribute_name(:password_confirmation) %><%= password_field_tag 'user[password_confirmation]', nil %></div>
+		</div>
 	</div>
 	<hr>
-	<div class="row">
-        	<div class="field_box column"><%= label_tag 'user[rows]', User.human_attribute_name(:rows) %><%= number_field_tag 'user[rows]', current_user.rows %></div>
-	        <div class="field_box column"><%= label_tag 'user[columns]', User.human_attribute_name(:columns) %><%= number_field_tag 'user[columns]', current_user.columns %></div>
+	<div>
+		<%= content_tag :h2, t(:page_group, scope: :configuration) %>
+		<div class="row">
+        		<div class="field_box col-sm-6"><%= label_tag 'user[rows]', User.human_attribute_name(:rows) %><%= number_field_tag 'user[rows]', current_user.rows %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[columns]', User.human_attribute_name(:columns) %><%= number_field_tag 'user[columns]', current_user.columns %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[page_width]', User.human_attribute_name(:page_width) %><%= number_field_tag 'user[page_width]', current_user.page_width %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[page_height]', User.human_attribute_name(:page_height) %><%= number_field_tag 'user[page_height]', current_user.page_height %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[page_margin_left]', User.human_attribute_name(:page_margin_left) %><%= number_field_tag 'user[page_margin_left]', current_user.page_margin_left %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[page_margin_right]', User.human_attribute_name(:page_margin_right) %><%= number_field_tag 'user[page_margin_right]', current_user.page_margin_right %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[page_margin_top]', User.human_attribute_name(:page_margin_top) %><%= number_field_tag 'user[page_margin_top]', current_user.page_margin_top %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[page_margin_bottom]', User.human_attribute_name(:page_margin_bottom) %><%= number_field_tag 'user[page_margin_bottom]', current_user.page_margin_bottom %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[tag_margin_left]', User.human_attribute_name(:tag_margin_left) %><%= number_field_tag 'user[tag_margin_left]', current_user.tag_margin_left %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[tag_margin_right]', User.human_attribute_name(:tag_margin_right) %><%= number_field_tag 'user[tag_margin_right]', current_user.tag_margin_right %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[tag_margin_top]', User.human_attribute_name(:tag_margin_top) %><%= number_field_tag 'user[tag_margin_top]', current_user.tag_margin_top %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[tag_margin_bottom]', User.human_attribute_name(:tag_margin_bottom) %><%= number_field_tag 'user[tag_margin_bottom]', current_user.tag_margin_bottom %></div>
+		</div>
 	</div>
 	<hr>
-	<div class="row">
-	        <div class="field_box column"><%= label_tag 'user[order_number]', User.human_attribute_name(:order_number) %><%= text_field_tag 'user[order_number]', current_user.order_number %></div>
-	        <div class="field_box column"><%= label_tag 'user[full_name]', User.human_attribute_name(:full_name) %><%= text_field_tag 'user[full_name]', current_user.full_name %></div>
-	</div>
-	<div class="row">
-	        <div class="field_box column"><%= label_tag 'user[street]', User.human_attribute_name(:street) %><%= text_field_tag 'user[street]', current_user.street %></div>
-        	<div class="field_box column"><%= label_tag 'user[street2]', User.human_attribute_name(:street2) %><%= text_field_tag 'user[street2]', current_user.street2 %></div>
-	</div>
-	<div class="row">
-		<div class="field_box column"><%= label_tag 'user[zip_number]', User.human_attribute_name(:zip_number) %><%= text_field_tag 'user[zip_number]', current_user.zip_number %></div>
-		<div class="field_box column"><%= label_tag 'user[city]', User.human_attribute_name(:city) %><%= text_field_tag 'user[city]', current_user.city %></div>
-	        <div class="field_box column"><%= label_tag 'user[state]', User.human_attribute_name(:state) %><%= text_field_tag 'user[state]', current_user.state %></div>
-	</div>
-	<div class="row">
-	        <div class="field_box column"><%= label_tag 'user[country]', User.human_attribute_name(:country) %><%= text_field_tag 'user[country]', current_user.country %></div>
+	<div>
+		<%= content_tag :h2, t(:address_group, scope: :configuration) %>
+		<div class="row">
+		        <div class="field_box col-sm-6"><%= label_tag 'user[order_number]', User.human_attribute_name(:order_number) %><%= text_field_tag 'user[order_number]', current_user.order_number, placeholder: t(:order_number, scope: :csv_columns) %></div>
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[full_name]', User.human_attribute_name(:full_name) %><%= text_field_tag 'user[full_name]', current_user.full_name, placeholder: t(:full_name, scope: :csv_columns) %></div>
+		</div>
+		<div class="row">
+		        <div class="field_box col-sm-6"><%= label_tag 'user[street]', User.human_attribute_name(:street) %><%= text_field_tag 'user[street]', current_user.street, placeholder: t(:street, scope: :csv_columns) %></div>
+        		<div class="field_box col-sm-6"><%= label_tag 'user[street2]', User.human_attribute_name(:street2) %><%= text_field_tag 'user[street2]', current_user.street2, placeholder: t(:street2, scope: :csv_columns) %></div>
+		</div>
+		<div class="row">
+			<div class="field_box col-sm-6"><%= label_tag 'user[zip_number]', User.human_attribute_name(:zip_number) %><%= text_field_tag 'user[zip_number]', current_user.zip_number, placeholder: t(:zip_number, scope: :csv_columns) %></div>
+			<div class="field_box col-sm-6"><%= label_tag 'user[city]', User.human_attribute_name(:city) %><%= text_field_tag 'user[city]', current_user.city, placeholder: t(:city, scope: :csv_columns) %></div>
+		        <div class="field_box col-sm-6"><%= label_tag 'user[state]', User.human_attribute_name(:state) %><%= text_field_tag 'user[state]', current_user.state, placeholder: t(:state, scope: :csv_columns) %></div>
+		</div>
+		<div class="row">
+	        	<div class="field_box col-sm-6"><%= label_tag 'user[country]', User.human_attribute_name(:country) %><%= text_field_tag 'user[country]', current_user.country, placeholder: t(:country, scope: :csv_columns) %></div>
+		</div>
 	</div>
 	<hr>
 	<div class="row">

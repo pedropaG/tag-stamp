@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019222908) do
+ActiveRecord::Schema.define(version: 20171022200021) do
 
   create_table "orders", force: :cascade do |t|
     t.string   "number"
@@ -37,14 +37,14 @@ ActiveRecord::Schema.define(version: 20171019222908) do
     t.string   "name"
     t.string   "logo_uid"
     t.string   "logo_name"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.string   "email",                  default: "",  null: false
+    t.string   "encrypted_password",     default: "",  null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,   null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 20171019222908) do
     t.string   "state"
     t.string   "country"
     t.integer  "last_cell_printed"
+    t.integer  "page_margin_left",       default: 0
+    t.integer  "page_margin_right",      default: 0
+    t.integer  "page_margin_top",        default: 0
+    t.integer  "page_margin_bottom",     default: 0
+    t.integer  "tag_margin_left",        default: 0
+    t.integer  "tag_margin_right",       default: 0
+    t.integer  "tag_margin_top",         default: 0
+    t.integer  "tag_margin_bottom",      default: 0
+    t.integer  "page_width",             default: 210
+    t.integer  "page_height",            default: 297
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
