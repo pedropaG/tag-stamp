@@ -11,10 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui/widgets/draggable
+//= require jquery-ui/widgets/droppable
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-fileinput/js/fileinput.min
 //= require_tree .
+
+$(document).ready( function(){  
 
 	$(document).on("change", ".checkbox_all input[type='checkbox']", function(e){
 		var checked = $(this).is(":checked");
@@ -35,3 +39,39 @@
 		var id = $(this).val();
 		$(".preview_form #orders_" + id ).prop("checked", checked);
 	});
+
+	function snapToPosition(dragger, target){
+		var topMove = target.position().top - dragger.data('position').top + (target.outerHeight(true) - dragger.outerHeight(true)) / 2;
+		var leftMove= target.position().left - dragger.data('position').left + (target.outerWidth(true) - dragger.outerWidth(true)) / 2;
+		dragger.animate({top:topMove,left:leftMove},{duration:200,easing:'linear'});
+	}
+
+	
+	/* LOAD ON READY */
+  
+	function setup() {
+		$( ".draggable" ).draggable({
+			scroll: false,
+			revert: 'invalid',
+			stack: false,
+			create: function(){$(this).data('position',$(this).position())},
+			cursor: "pointer",
+			start:function(){$(this).stop(true,true)},
+			drag: function(event, ui)
+			{
+				$( ".droparea" ).removeClass( "highlight" );
+			}		
+		});
+		$(".droppable").droppable({
+			accept: ".order_box",
+  			drop: function(event, ui) {
+				console.log("prueba");
+				$( this ).addClass( "highlight" ).find( "p" );
+				snapToPosition(ui.draggable, $(this));
+			}
+		});
+	}
+
+	setup();
+
+});
