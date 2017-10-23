@@ -11,6 +11,14 @@ module TagsHelper
 		records.size / current_user.cells_per_page + 1
 	end
 
+	def row_height
+		1000 / current_user.rows
+	end
+
+	def cell_width
+		100 / current_user.columns
+	end
+
 	# AUTO IMPORT
 
 	def month

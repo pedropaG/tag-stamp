@@ -1,11 +1,11 @@
 <div class="tags_list container">
 	<% record_number = 0 %>
 	<% cell = 0 %>
-	<% (0..total_pages(@records)).each do |page| %>
+	<% (0..(total_pages(@records) - 1)).each do |page| %>
 		<div class="page_box">
-			<% (0..current_user.rows).each do |row| %>
-				<div class="row_box">
-					<% (0..current_user.columns).each do |columns| %>
+			<% (0..(current_user.rows - 1)).each do |row| %>
+				<div class="row_box" style="height: <%= row_height %>px;">
+					<% (0..(current_user.columns - 1)).each do |columns| %>
 						<% cell += 1 %>
 						<% record = order_by_cell(cell, page, record_number, @records) %>
 						<% record_number +=1 if record %>

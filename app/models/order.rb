@@ -4,6 +4,7 @@ class Order < ApplicationRecord
 
 	scope :from_user, lambda{|user| where(user: user) }
 	scope :unprinted, -> { where(printed: false) }
+	scope :prepared_to_print, -> { where(prepared: true) }
 
 
 	def full_address

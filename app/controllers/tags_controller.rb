@@ -53,8 +53,15 @@ class TagsController < ApplicationController
 
 	def preview
 		logger.debug params[:orders]
-		orders_ids = params[:orders] - ["0"]
-		@records = orders_ids.map {|id| Order.find(id) }
+		if params[:orders].present?
+			orders_ids = params[:orders] - ["0"]
+			@records = orders_ids.map {|id| Order.find(id) }
+			Order.where.not(id: @records).update_all prepared: false
+			Order.where(id: @records).update_all prepared: true
+
+		else
+			@records = Order.prepared_to_print
+		end
 		
 	end
 

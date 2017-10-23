@@ -20,6 +20,7 @@
 		var checked = $(this).is(":checked");
 		var checkboxes = $(this).closest(".order_table").find(".print_selector input[type='checkbox']");
 		$(checkboxes).prop('checked', checked);
+		$(checkboxes).trigger('change');
 	});
 
 	$(document).on("change, keyup", ".order_table input[type='text']", function(e){

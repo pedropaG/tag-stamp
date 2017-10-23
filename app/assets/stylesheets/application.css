@@ -19,10 +19,16 @@
 
 .hidden{ display: none; }
 
+
+.tags_list{
+	margin-top: 50px;
+}
+
 .tag_box{
 	box-sizing: border-box;
-	border: 1px solid lightgray;
+	border: 1px dashed lightgray;i
 	padding: 5px;
+	float: left;
 }
 
 .tag_box_line{
