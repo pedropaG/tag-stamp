@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :tags, only: [:index] do
     post 'preview', on: :collection
+    get 'preview', on: :collection
     post 'print', on: :collection
     post 'upload_file', on: :collection
   end

@@ -4,7 +4,11 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		current_user.update!(user_params)
+		if !current_user.update(user_params)
+			flash[:error] = current_user.errors.to_a.join("\n")
+		else
+			flash[:now] = t(:successfully_saved)
+		end
 		redirect_to root_path
 	end
 

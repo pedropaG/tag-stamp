@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   dragonfly_accessor :logo
 
-  def permit_params
+  def self.permit_columns
 	[:email, :password, :password_confirmation, :rows, :columns, :order_name, :street, :street2, :zip_number, :state, :country, :logo_uid, :logo_name]
   end
 
@@ -26,6 +26,12 @@ class User < ApplicationRecord
 
   def cell_width
 	page_width / columns
+  end
+
+  protected
+
+  def password_required?
+    !persisted? || password.present? || password_confirmation.present?
   end
 
 end

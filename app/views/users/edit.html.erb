@@ -1,5 +1,5 @@
 <div class="container">
-<%= form_tag edit_user_path(current_user) do %>
+<%= form_tag user_path(current_user), method: :patch do %>
 	<div>
 		<%= content_tag :h2, t(:user_group, scope: :configuration) %>
 		<div class="row">
@@ -27,6 +27,7 @@
 	        	<div class="field_box col-sm-6"><%= label_tag 'user[tag_margin_right]', User.human_attribute_name(:tag_margin_right) %><%= number_field_tag 'user[tag_margin_right]', current_user.tag_margin_right %></div>
 	        	<div class="field_box col-sm-6"><%= label_tag 'user[tag_margin_top]', User.human_attribute_name(:tag_margin_top) %><%= number_field_tag 'user[tag_margin_top]', current_user.tag_margin_top %></div>
 	        	<div class="field_box col-sm-6"><%= label_tag 'user[tag_margin_bottom]', User.human_attribute_name(:tag_margin_bottom) %><%= number_field_tag 'user[tag_margin_bottom]', current_user.tag_margin_bottom %></div>
+	        	<div class="checkbox col-sm-6"><%= label_tag 'user[print_lines]', User.human_attribute_name(:print_lines) %><%= check_box_tag 'user[print_lines]', current_user.print_lines %></div>
 		</div>
 	</div>
 	<hr>

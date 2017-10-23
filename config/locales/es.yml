@@ -14,7 +14,11 @@ es:
   list_mode: Modo listado
   edition_mode: Modo edición
   edit_user: Editar usuario
+  successfully_saved: Grabado correctamente
   activerecord:
+    errors:
+      messages:
+        record_invalid: Registro inválido
     models:
       user: 
         one: Usuario
@@ -48,6 +52,7 @@ es:
         tag_margin_right: Margen de etiquetas derecho
         tag_margin_top: Margen de etiquetas superior
         tag_margin_bottom: Margen de etiquetas inferior
+        print_lines: Imprimir lineas de separación
       order:
         number: Número de pedido
         name: Nombre
