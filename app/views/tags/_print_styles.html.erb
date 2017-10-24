@@ -1,0 +1,37 @@
+<style>
+	@media print{
+        	.header_box, .footer_buttons{ display: none;}
+
+	        .tags_list{
+        	        margin: 0;
+                	width: <%= current_user.page_width %>mm;
+			//height: <%= current_user.page_height %>mm;
+			box-sizing: border-box;
+			padding-left: <%= current_user.page_margin_left %>mm;
+			padding-right: <%= current_user.page_margin_right %>mm;
+			padding-top: <%= current_user.page_margin_top %>mm;
+			padding-bottom: <%= current_user.page_margin_bottom %>mm;			
+	        }
+
+        	.tag_box{
+                	width: <%= current_user.cell_width %>mm !important;
+	                height: <%= current_user.cell_height%>mm !important;
+			<% if current_user.print_lines %>
+				border: 1px dashed lightgray;
+			<% else %>
+				border: none;
+			<% end %>
+		}
+	
+		.order_box{
+			box-sizing: border-box;
+			padding-left: <%= current_user.tag_margin_left %>mm;
+			padding-right: <%= current_user.tag_margin_right %>mm;
+			padding-top: <%= current_user.tag_margin_top %>mm;
+			padding-bottom: <%= current_user.tag_margin_bottom %>mm;
+        	}
+
+	}
+
+
+</style>

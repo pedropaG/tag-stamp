@@ -40,6 +40,11 @@ $(document).ready( function(){
 		$(".preview_form #orders_" + id ).prop("checked", checked);
 	});
 
+	$(document).on("click", "#print_button", function(e){
+		e.preventDefault();
+		window.print();
+	});
+
 	function snapToPosition(dragger, target){
 		var topMove = target.position().top - dragger.data('position').top + (target.outerHeight(true) - dragger.outerHeight(true)) / 2;
 		var leftMove= target.position().left - dragger.data('position').left + (target.outerWidth(true) - dragger.outerWidth(true)) / 2;

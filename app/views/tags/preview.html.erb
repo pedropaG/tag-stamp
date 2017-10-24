@@ -1,3 +1,4 @@
+<%= render "print_styles" %>
 <div class="tags_list container">
 	<% record_number = 0 %>
 	<% cell = 0 %>
@@ -17,8 +18,8 @@
 		</div>
 	<% end %>
 	<hr>
-	<div class="row">
-		<%= link_to t(:print), root_path, class: "btn btn-success" %>
-		<%= link_to t(:return), root_path, class: "btn btn-danger" %>
-	</div>
+</div>
+<div class="row footer_buttons">
+	<%= link_to t(:print), "#", class: "btn btn-success", id: "print_button" %>
+	<%= link_to t(:return), root_path, class: "btn btn-danger" %>
 </div>
