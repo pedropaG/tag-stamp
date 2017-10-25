@@ -1,4 +1,5 @@
 <style>
+
 	@media print{
         	.header_box, .footer_buttons{ display: none;}
 
@@ -11,27 +12,32 @@
 			padding-right: <%= current_user.page_margin_right %>mm;
 			padding-top: <%= current_user.page_margin_top %>mm;
 			padding-bottom: <%= current_user.page_margin_bottom %>mm;			
-	        }
+			max-width: none;
+		}
 
         	.tag_box{
+			overflow: hidden;
                 	width: <%= current_user.cell_width %>mm !important;
 	                height: <%= current_user.cell_height%>mm !important;
 			<% if current_user.print_lines %>
 				border: 1px dashed lightgray;
 			<% else %>
-				border: none;
+				border: 1px solid transparent;
 			<% end %>
 		}
 	
 		.order_box{
+			font-size: 0.8em;
+			line-height: 1.3em;
 			box-sizing: border-box;
 			padding-left: <%= current_user.tag_margin_left %>mm;
 			padding-right: <%= current_user.tag_margin_right %>mm;
 			padding-top: <%= current_user.tag_margin_top %>mm;
 			padding-bottom: <%= current_user.tag_margin_bottom %>mm;
         	}
+	
+		.tag_list hr{ display: none;}
 
 	}
-
 
 </style>

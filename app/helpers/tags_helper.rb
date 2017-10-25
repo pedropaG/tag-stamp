@@ -19,6 +19,10 @@ module TagsHelper
 		100 / current_user.columns
 	end
 
+	def all_selected?(records)
+		records.map(&:prepared).all?
+	end
+
 	# AUTO IMPORT
 
 	def month

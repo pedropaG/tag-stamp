@@ -18,7 +18,7 @@
 	<% if @records.any? %>
 		<div class="order_table">
 			<div class="orders_header">
-				<span class="checkbox_all mark_all"><%= check_box_tag t(:mark_all) %></span>
+				<span class="checkbox_all mark_all"><%= check_box_tag t(:mark_all), 1, all_selected?(@records) %></span>
 				<span><%= Order.human_attribute_name(:number) %></span>
 				<span><%= Order.human_attribute_name(:full_name) %></span>
 				<span class="just_edition_mode"><%= Order.human_attribute_name(:street) %></span>
@@ -33,8 +33,8 @@
 			<% end %>
 			</table>
 			<%= form_tag preview_tags_path, class: "preview_form" do %>	
-				<% @records.each do |record| %>
-					<%= content_tag :div, check_box_tag("orders[]", record.id, nil, id: "orders_#{record.id}"), class: "checkbox hidden" %>
+				<% @records.each do |record| %>				
+					<%= content_tag :div, check_box_tag("orders[]", record.id, record.prepared?, id: "orders_#{record.id}"), class: "checkbox hidden" %>
 				<% end %>
 				
 				<%= submit_tag t(:preview), class: "btn btn-success" %>

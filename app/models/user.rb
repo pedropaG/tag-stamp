@@ -21,11 +21,11 @@ class User < ApplicationRecord
   end
 
   def cell_height
-	page_height / rows
+	page_height / rows - 2
   end
 
   def cell_width
-	page_width / columns
+	page_width / columns - 2
   end
 
   protected

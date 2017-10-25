@@ -2,7 +2,7 @@
 	<%= form_tag order_path(record), class: "form-inline", method: :patch, remote: true, id: "form_order-#{record.id}" do %>
 		<div class="print_selector">
 			<div class="checkbox">
-				<%= check_box_tag 'orders[]', record.id %>
+				<%= check_box_tag 'orders[]', record.id, record.prepared %>
 			</div>
 		</div>
 		<div class="number">
