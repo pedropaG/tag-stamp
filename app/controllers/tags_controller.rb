@@ -93,7 +93,7 @@ class TagsController < ApplicationController
 
 	def column_name(column)
 		name = current_user.send(column)
-		name ||= t(column, scope: :csv_columns)
+		name = name.present? ? name : t(column, scope: :csv_columns)
 		name
 	end
 

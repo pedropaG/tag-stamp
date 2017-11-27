@@ -1,21 +1,41 @@
 <style>
 
+	@page{
+                width: <%= current_user.page_width  %>mm;
+		height: <%= current_user.page_height %>mm;
+		margin: 0;
+	}
+
 	@media print{
+		body{ 
+			padding: 0;
+			margin: 0;
+		}
+	
         	.header_box, .footer_buttons{ display: none;}
 
-	        .tags_list{
+	        .page_box{
         	        margin: 0;
-                	width: <%= current_user.page_width %>mm;
-			//height: <%= current_user.page_height %>mm;
+                	width: <%= current_user.page_width  %>mm;
+			height: <%= current_user.page_height %>mm;
 			box-sizing: border-box;
 			padding-left: <%= current_user.page_margin_left %>mm;
 			padding-right: <%= current_user.page_margin_right %>mm;
 			padding-top: <%= current_user.page_margin_top %>mm;
-			padding-bottom: <%= current_user.page_margin_bottom %>mm;			
+			padding-bottom: <%= current_user.page_margin_bottom %>mm;		
 			max-width: none;
+			float: none;
+		//	page-break-after: always;
+			border: none;
+		}
+
+		.tags_list{ 
+			margin: 0;
+			padding: 0;
 		}
 
         	.tag_box{
+			float: left;
 			overflow: hidden;
                 	width: <%= current_user.cell_width %>mm !important;
 	                height: <%= current_user.cell_height%>mm !important;
@@ -36,7 +56,8 @@
 			padding-bottom: <%= current_user.tag_margin_bottom %>mm;
         	}
 	
-		.tag_list hr{ display: none;}
+		.tags_list hr{ display: none;}
+
 
 	}
 
