@@ -15,36 +15,11 @@
 				<%= text_field_tag "record[full_name]", record.full_name %>
 			</div>
 		</div>
-		<div class="street just_edition_mode">
-                        <div class="form-group">
-                                <%= text_field_tag "record[street]", record.street %>
-                        </div>
-                </div>
-		<div class="street2 just_edition_mode">
-                        <div class="form-group">
-                                <%= text_field_tag "record[street2]", record.street2 %>
-                        </div>
-                </div>
-		<div class="city just_edition_mode">
-                        <div class="form-group">
-                                <%= text_field_tag "record[city]", record.city %>
-                        </div>
-                </div>
-		<div class="state just_edition_mode">
-                        <div class="form-group">
-                                <%= text_field_tag "record[state]", record.state %>
-                        </div>
-                </div>
-		<div class="zip_number just_edition_mode">
-                        <div class="form-group">
-                                <%= text_field_tag "record[zip_number]", record.zip_number %>
-                        </div>
-                </div>
-		<div class="country just_edition_mode">
-                        <div class="form-group">
-                                <%= text_field_tag "record[country]", record.country %>
-                        </div>
-                </div>
+		<div class="print_text just_edition_mode">
+			<div class="form-group">
+				<%= text_area_tag "record[print_text]", tag_box_text(record) %>
+			</div>
+		</div>
 		
 		<div class="actions">
 			<div class="form-group">

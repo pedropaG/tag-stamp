@@ -21,12 +21,7 @@
 				<span class="checkbox_all mark_all"><%= check_box_tag t(:mark_all), 1, all_selected?(@records) %></span>
 				<span><%= Order.human_attribute_name(:number) %></span>
 				<span><%= Order.human_attribute_name(:full_name) %></span>
-				<span class="just_edition_mode"><%= Order.human_attribute_name(:street) %></span>
-				<span class="just_edition_mode"><%= Order.human_attribute_name(:street2) %></span>
-				<span class="just_edition_mode"><%= Order.human_attribute_name(:city) %></span>
-				<span class="just_edition_mode"><%= Order.human_attribute_name(:state) %></span>
-				<span class="just_edition_mode"><%= Order.human_attribute_name(:zip_number) %></span>
-				<span class="just_edition_mode"><%= Order.human_attribute_name(:country) %></span>
+				<span class="just_edition_mode"><%= Order.human_attribute_name(:print_text) %></span>
 			</div>
 			<% @records.each do |record| %>
 				<%= render 'record_list', record: record %>

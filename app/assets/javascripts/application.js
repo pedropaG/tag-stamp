@@ -27,7 +27,7 @@ $(document).ready( function(){
 		$(checkboxes).trigger('change');
 	});
 
-	$(document).on("change, keyup", ".order_table input[type='text']", function(e){
+	$(document).on("change, keyup", ".order_table input[type='text'], .order_table textarea", function(e){
 		var code= e.keyCode || e.which;
 		if (code != '9'){
 			$(this).closest("form").addClass("changed");

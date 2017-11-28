@@ -58,20 +58,27 @@
     border-bottom: 2px solid #d0c900;
     background: #edf100;
 }
-.edition_mode .order_table .form-inline > div{
-	width: 10%;
-}
-.order_table .form-group input[type=text]{
+
+.order_table .form-group input[type=text],
+.order_table .form-group textarea{
 	font-size: 12px;
 	border: 1px solid transparent;
 	outline: none;
 	overflow: hidden;
+	min-width: 150px;
+	margin-right: 15px;
+}
+.order_table .form-group textarea{ 
+	min-width: 250px; 
+	min-height: 90px;
 }
 
-.order_table .form-group input[type=text]:focus{
+.order_table .form-group input[type=text]:focus,
+.order_table .form-group textarea:focus{
 	border: 1px solid #cacaca;
 }
-.order_table .changed .form-group input[type=text]{ 
+.order_table .changed .form-group input[type=text],
+.order_table .changed .form-group textarea{ 
 	border: 1px solid #cacaca;
 	border-left-color: transparent;
 }

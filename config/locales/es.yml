@@ -64,6 +64,7 @@ es:
         zip_code: Código Postal
         state: Estado
         address: Dirección
+        print_text: "Texto a imprimir"
         printed: Impreso
         printed_at: Fecha de impresión
         created_at: Fecha de creación

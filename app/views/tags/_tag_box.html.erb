@@ -1,10 +1,7 @@
 <div class="tag_box droppable" style="width: <%= cell_width %>%;height: <%= row_height %>px;">
 	<% if record %>
 		<div class="order_box draggable" data-width="<%= current_user.cell_width %>cm" data-height="<%= current_user.cell_height %>cm">
-			<%= content_tag :span, record.full_name, class: "tag_box_line" %>
-			<%= content_tag :span, record.full_address, class: "tag_box_line" %>
-			<%= content_tag :span, record.zip_and_city, class: "tag_box_line" %>
-			<%= content_tag :span, record.state_and_country, class: "tag_box_line" %>
+			<%= tag_box_html(record) %>
 		</div>
 	<% end %>
 </div>
